@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -24,13 +25,14 @@ public class PatientModel {
 			Transaction tx = session.beginTransaction();
 			try{
 				List<Patient> patients = new ArrayList<Patient>();
-				patients = (List<Patient>) session.createCriteria(Patient.class).setFetchMode("comptages",FetchMode.JOIN)
-				  .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-				/*int size = patients.size();
-				for(int i=0;i<size;i++){
-					Hibernate.initialize(patients.get(i).getComptages());
-				}*/
-				
+				patients = (List<Patient>) session.createQuery("from Patient").list();
+
+				for (Iterator iter = patients.iterator(); iter.hasNext();) {
+					   Patient element = (Patient) iter.next();
+					   System.out.println(element.getPatientId());
+
+					   Hibernate.initialize(element.getComptages());
+				}
 				tx.commit();
 				return patients;
 			}catch(Exception ex){
