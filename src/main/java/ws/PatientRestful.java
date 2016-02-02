@@ -28,7 +28,7 @@ public class PatientRestful {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{room_id}")
+	@Path("/{patient_id}")
 	public Response getPatientById(@PathParam("patient_id") Short patient_id) throws Exception {
 		PatientModel pm = new PatientModel();
 
