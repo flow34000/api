@@ -10,17 +10,17 @@ import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import model.PatientModel;
-import domain.Patient;
+import model.ComptageModel;
+import domain.Comptage;
 
 @Path("genes")
-public class PatientRestful {
+public class ComptageRestful {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findAll() throws IllegalArgumentException, Exception {
-		PatientModel pm = new PatientModel();
-		return Response.ok().entity(new GenericEntity<List<Patient>>(pm.findAll()){})
+		ComptageModel gm = new ComptageModel();
+		return Response.ok().entity(new GenericEntity<List<Comptage>>(gm.findAll()){})
 			.build();
 	}
 }
