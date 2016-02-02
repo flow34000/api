@@ -11,9 +11,10 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import persistence.HibernateUtil;
+import domain.Gene;
 import domain.Patient;
 
-public class PatientModel {
+public class PatientModel extends AbstractModel<Patient, Short>  {
 
 	public PatientModel(){
 		
