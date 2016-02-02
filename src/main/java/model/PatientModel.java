@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -22,8 +24,8 @@ public class PatientModel {
 			Transaction tx = session.beginTransaction();
 			try{
 				List<Patient> patients = new ArrayList<Patient>();
-				patients = (List<Patient>) session.createQuery("from Patient").list();
-				
+				patients = (List<Patient>) session.createCriteria(Patient.class).setFetchMode("comptages",FetchMode.JOIN)
+				  .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 				/*int size = patients.size();
 				for(int i=0;i<size;i++){
 					Hibernate.initialize(patients.get(i).getComptages());
