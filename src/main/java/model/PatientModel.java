@@ -24,10 +24,19 @@ public class PatientModel {
 		try{
 			Transaction tx = session.beginTransaction();
 			try{
+				StringBuilder hqlQuery = new StringBuilder();
+				hqlQuery.append("from Patient p");
+				hqlQuery.append(" inner join fetch p.comptages");
+				//hqlQuery.append(" where a.id = :id");
+				
+				List<Patient> patients = new ArrayList<Patient>();
+				patients = (List<Patient>) session.createQuery(hqlQuery.toString());
+				
+				/*
 				List<Patient> patients = new ArrayList<Patient>();
 				patients = (List<Patient>) session.createQuery("from Patient").list();
 
-				/*for (Iterator iter = patients.iterator(); iter.hasNext();) {
+				for (Iterator iter = patients.iterator(); iter.hasNext();) {
 					   Patient element = (Patient) iter.next();
 					   System.out.println(element.getPatientId());
 
