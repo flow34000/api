@@ -22,7 +22,7 @@ public class PatientModel {
 			Transaction tx = session.beginTransaction();
 			try{
 				List<Patient> patients = new ArrayList<Patient>();
-				patients = (List<Patient>) session.createQuery("from patient");
+				patients = (List<Patient>) session.createQuery("from Patient").list();
 				
 				int size = patients.size();
 				for(int i=0;i<size;i++){
