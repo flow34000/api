@@ -30,7 +30,7 @@ public class PatientModel {
 				//hqlQuery.append(" where a.id = :id");
 				
 				List<Patient> patients = new ArrayList<Patient>();
-				patients = (List<Patient>) session.createQuery(hqlQuery.toString());
+				patients = (List<Patient>) session.createQuery(hqlQuery.toString()).list();
 				
 				/*
 				List<Patient> patients = new ArrayList<Patient>();
