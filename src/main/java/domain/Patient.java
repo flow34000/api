@@ -158,7 +158,7 @@ public class Patient implements java.io.Serializable {
 		this.gender = gender;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "patient")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "patient")
 	public Set<Comptage> getComptages() {
 		return this.comptages;
 	}

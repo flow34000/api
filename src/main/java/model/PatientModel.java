@@ -25,7 +25,7 @@ public class PatientModel {
 			Transaction tx = session.beginTransaction();
 			try{
 				List<Patient> patients = new ArrayList<Patient>();
-				patients = (List<Patient>) session.createQuery("select * from Patient p join fetch p.comptages").list();
+				patients = (List<Patient>) session.createQuery("from Patient").list();
 
 				/*for (Iterator iter = patients.iterator(); iter.hasNext();) {
 					   Patient element = (Patient) iter.next();
