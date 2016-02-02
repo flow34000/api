@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 f?vr. 2016 10:59:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="domain.Patient" table="patient" schema="public">
+        <id name="patientId" type="string">
+            <column name="patient_id" length="25" />
+            <generator class="assigned" />
+        </id>
+        <property name="pathology" type="string">
+            <column name="pathology" length="25" not-null="true" />
+        </property>
+        <property name="tissue" type="string">
+            <column name="tissue" length="25" not-null="true" />
+        </property>
+        <property name="age" type="short">
+            <column name="age" not-null="true" />
+        </property>
+        <property name="platform" type="string">
+            <column name="platform" length="25" not-null="true" />
+        </property>
+        <property name="protocol" type="string">
+            <column name="protocol" length="25" not-null="true" />
+        </property>
+        <property name="specie" type="string">
+            <column name="specie" length="25" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="25" not-null="true" />
+        </property>
+        <property name="class_" type="short">
+            <column name="class" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="25" not-null="true" />
+        </property>
+        <set name="comptages" table="comptage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="patient_id" length="25" not-null="true" />
+            </key>
+            <one-to-many class="domain.Comptage" />
+        </set>
+    </class>
+</hibernate-mapping>

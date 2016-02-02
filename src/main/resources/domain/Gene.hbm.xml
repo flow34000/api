@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 f?vr. 2016 10:59:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="domain.Gene" table="gene" schema="public">
+        <id name="geneId" type="string">
+            <column name="gene_id" length="25" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="java.lang.Short">
+            <column name="version" />
+        </version>
+        <property name="source" type="string">
+            <column name="source" length="50" />
+        </property>
+        <property name="objectType" type="string">
+            <column name="object_type" length="50" />
+        </property>
+        <property name="logicName" type="string">
+            <column name="logic_name" length="50" />
+        </property>
+        <property name="species" type="string">
+            <column name="species" length="50" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="150" />
+        </property>
+        <property name="displayName" type="string">
+            <column name="display_name" length="50" />
+        </property>
+        <property name="assemblyName" type="string">
+            <column name="assembly_name" length="50" />
+        </property>
+        <property name="biotype" type="string">
+            <column name="biotype" length="50" />
+        </property>
+        <property name="end" type="java.lang.Integer">
+            <column name="end" />
+        </property>
+        <property name="dbType" type="string">
+            <column name="db_type" length="50" />
+        </property>
+        <property name="strand" type="java.lang.Short">
+            <column name="strand" />
+        </property>
+        <property name="start" type="java.lang.Integer">
+            <column name="start" />
+        </property>
+        <property name="seqRegionName" type="string">
+            <column name="seq_region_name" length="5" />
+        </property>
+        <set name="comptages" table="comptage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="gene_id" length="25" not-null="true" />
+            </key>
+            <one-to-many class="domain.Comptage" />
+        </set>
+    </class>
+</hibernate-mapping>
