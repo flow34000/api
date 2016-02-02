@@ -31,6 +31,7 @@ public class Patient implements java.io.Serializable {
 	private String type;
 	private short class_;
 	private String gender;
+	private Set<Comptage> comptages = new HashSet<Comptage>(0);
 
 	public Patient() {
 	}
@@ -63,6 +64,7 @@ public class Patient implements java.io.Serializable {
 		this.type = type;
 		this.class_ = class_;
 		this.gender = gender;
+		this.comptages = comptages;
 	}
 
 	@Id
@@ -154,6 +156,15 @@ public class Patient implements java.io.Serializable {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "patient")
+	public Set<Comptage> getComptages() {
+		return this.comptages;
+	}
+
+	public void setComptages(Set<Comptage> comptages) {
+		this.comptages = comptages;
 	}
 
 }
