@@ -24,10 +24,10 @@ public class PatientModel {
 				List<Patient> patients = new ArrayList<Patient>();
 				patients = (List<Patient>) session.createQuery("from Patient").list();
 				
-				int size = patients.size();
+				/*int size = patients.size();
 				for(int i=0;i<size;i++){
 					Hibernate.initialize(patients.get(i).getComptages());
-				}
+				}*/
 				
 				tx.commit();
 				return patients;
