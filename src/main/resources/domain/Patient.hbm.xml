@@ -35,7 +35,7 @@
         <property name="gender" type="string">
             <column name="gender" length="25" not-null="true" />
         </property>
-        <set name="comptages" table="comptage" inverse="true" lazy="true" fetch="join">
+        <set name="comptages" table="comptage" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="patient_id" length="25" not-null="true" />
             </key>
