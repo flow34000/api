@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import model.MatrixModel;
 import domain.Matrix;
 
-@Path("genes")
+@Path("matrices")
 public class MatrixRestful {
 	
 	@GET

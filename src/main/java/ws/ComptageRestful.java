@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import model.ComptageModel;
 import domain.Comptage;
 
-@Path("genes")
+@Path("comptages")
 public class ComptageRestful {
 	
 	@GET

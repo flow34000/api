@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import model.PatientModel;
 import domain.Patient;
 
-@Path("genes")
+@Path("patients")
 public class PatientRestful {
 	
 	@GET
