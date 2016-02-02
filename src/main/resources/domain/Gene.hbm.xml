@@ -50,7 +50,7 @@
         <property name="seqRegionName" type="string">
             <column name="seq_region_name" length="5" />
         </property>
-        <set name="comptages" table="comptage" inverse="true" lazy="true" fetch="select">
+        <set name="comptages" table="comptage" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="gene_id" length="25" not-null="true" />
             </key>

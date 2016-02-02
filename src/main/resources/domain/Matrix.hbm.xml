@@ -11,7 +11,7 @@
         <property name="description" type="string">
             <column name="description" length="100" not-null="true" />
         </property>
-        <set name="comptages" table="comptage" inverse="true" lazy="true" fetch="select">
+        <set name="comptages" table="comptage" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="matrix_id" not-null="true" />
             </key>
