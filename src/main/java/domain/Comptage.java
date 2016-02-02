@@ -51,7 +51,7 @@ public class Comptage implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "patient_id", nullable = false, insertable = false, updatable = false)
 	public Patient getPatient() {
 		return this.patient;
@@ -61,7 +61,7 @@ public class Comptage implements java.io.Serializable {
 		this.patient = patient;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "matrix_id", nullable = false)
 	public Matrix getMatrix() {
 		return this.matrix;
@@ -71,7 +71,7 @@ public class Comptage implements java.io.Serializable {
 		this.matrix = matrix;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "gene_id", nullable = false, insertable = false, updatable = false)
 	public Gene getGene() {
 		return this.gene;

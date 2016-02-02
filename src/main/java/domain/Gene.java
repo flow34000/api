@@ -205,7 +205,7 @@ public class Gene implements java.io.Serializable {
 		this.seqRegionName = seqRegionName;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gene")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "gene")
 	public Set<Comptage> getComptages() {
 		return this.comptages;
 	}
