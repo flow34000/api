@@ -58,7 +58,7 @@ public class Matrix implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "matrix")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "matrix")
 	public Set<Comptage> getComptages() {
 		return this.comptages;
 	}
