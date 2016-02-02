@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -14,7 +15,7 @@ import persistence.HibernateUtil;
 import domain.Gene;
 import domain.Patient;
 
-public class PatientModel extends AbstractModel<Patient, Short>  {
+public class PatientModel{
 
 	public PatientModel(){
 		
@@ -53,4 +54,22 @@ public class PatientModel extends AbstractModel<Patient, Short>  {
 			HibernateUtil.closeSession();
 		}
 	}
+	
+    public Patient get(String id) throws Exception {
+    	Session session = HibernateUtil.currentSession();
+    	try{
+	        Transaction tx = session.beginTransaction();
+	        try {
+		        Patient element = (Patient) session.get(Patient.class, id);
+		
+		        tx.commit();
+		        return element;
+	        }catch (Exception ex){
+	        	tx.rollback();
+	        	throw ex;
+	        }
+    	}finally {
+    		HibernateUtil.closeSession();
+    	}
+    }
 }

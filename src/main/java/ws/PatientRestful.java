@@ -29,7 +29,7 @@ public class PatientRestful {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{patient_id}")
-	public Response getPatientById(@PathParam("patient_id") Short patient_id) throws Exception {
+	public Response getPatientById(@PathParam("patient_id") String patient_id) throws Exception {
 		PatientModel pm = new PatientModel();
 
 		return Response.ok().entity(new GenericEntity<Patient>(pm.get(patient_id)){})
