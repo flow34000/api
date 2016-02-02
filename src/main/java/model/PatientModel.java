@@ -27,6 +27,7 @@ public class PatientModel {
 				StringBuilder hqlQuery = new StringBuilder();
 				hqlQuery.append("from Patient p");
 				hqlQuery.append(" inner join fetch p.comptages");
+				hqlQuery.append(" inner join fetch p.comptages.gene");
 				//hqlQuery.append(" where a.id = :id");
 				
 				List<Patient> patients = new ArrayList<Patient>();
