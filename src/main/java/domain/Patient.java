@@ -63,7 +63,6 @@ public class Patient implements java.io.Serializable {
 		this.type = type;
 		this.class_ = class_;
 		this.gender = gender;
-		this.comptages = comptages;
 	}
 
 	@Id
