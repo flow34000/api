@@ -16,20 +16,11 @@ import model.PatientModel;
 import domain.Gene;
 import domain.Patient;
 
-@Path("genes")
+@Path("genes/{gene_id}")
 public class GeneRestful {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response findAll() throws IllegalArgumentException, Exception {
-		GeneModel gm = new GeneModel();
-		return Response.ok().entity(new GenericEntity<List<Gene>>(gm.findAll()){})
-			.build();
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{gene_id}")
 	public Response getPatientById(@PathParam("gene_id") String gene_id) throws Exception {
 		GeneModel gm = new GeneModel();
 		Gene g = gm.get(gene_id);

@@ -16,7 +16,6 @@ public class ApplicationConfig extends Application{
 	private void addRestResourceClasses(Set <Class<?>> resources){
 		resources.add(ws.PatientRestful.class);
 		resources.add(ws.GeneRestful.class);
-		resources.add(ws.MatrixRestful.class);
-		resources.add(ws.ComptageRestful.class);
+		resources.add(ws.WorkRestful.class);
 	}
 }

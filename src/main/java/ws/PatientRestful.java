@@ -17,20 +17,11 @@ import domain.Comptage;
 import domain.Patient;
 
 
-@Path("patients")
+@Path("patients/{patient_id}")
 public class PatientRestful {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response findAll() throws IllegalArgumentException, Exception {
-		PatientModel pm = new PatientModel();
-		return Response.ok().entity(new GenericEntity<List<Patient>>(pm.findAll()){})
-			.build();
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{patient_id}")
 	public Response getPatientById(@PathParam("patient_id") String patient_id) throws Exception {
 		PatientModel pm = new PatientModel();
 		Patient p = pm.get(patient_id);

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 f?vr. 2016 10:59:53 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 3 f?vr. 2016 19:16:46 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="domain.Comptage" table="comptage" schema="public">
+    <class name="domain.Comptage" table="comptage">
         <composite-id name="id" class="domain.ComptageId">
             <key-property name="patientId" type="string">
                 <column name="patient_id" length="25" />
@@ -14,9 +14,6 @@
         </composite-id>
         <many-to-one name="patient" class="domain.Patient" update="false" insert="false" fetch="select">
             <column name="patient_id" length="25" not-null="true" />
-        </many-to-one>
-        <many-to-one name="matrix" class="domain.Matrix" fetch="select">
-            <column name="matrix_id" not-null="true" />
         </many-to-one>
         <many-to-one name="gene" class="domain.Gene" update="false" insert="false" fetch="select">
             <column name="gene_id" length="25" not-null="true" />

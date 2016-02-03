@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 f?vr. 2016 10:59:53 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 3 f?vr. 2016 19:16:46 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="domain.Gene" table="gene" schema="public">
+    <class name="domain.Gene" table="gene">
         <id name="geneId" type="string">
             <column name="gene_id" length="25" />
             <generator class="assigned" />
         </id>
-        <version name="version" type="java.lang.Short">
+        <version name="version" type="short">
             <column name="version" />
         </version>
         <property name="source" type="string">
@@ -35,16 +35,16 @@
         <property name="biotype" type="string">
             <column name="biotype" length="50" />
         </property>
-        <property name="end" type="java.lang.Integer">
+        <property name="end" type="int">
             <column name="end" />
         </property>
         <property name="dbType" type="string">
             <column name="db_type" length="50" />
         </property>
-        <property name="strand" type="java.lang.Short">
+        <property name="strand" type="short">
             <column name="strand" />
         </property>
-        <property name="start" type="java.lang.Integer">
+        <property name="start" type="int">
             <column name="start" />
         </property>
         <property name="seqRegionName" type="string">

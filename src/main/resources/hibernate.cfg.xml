@@ -14,5 +14,6 @@
   <mapping resource="domain/Gene.hbm.xml"/>
   <mapping resource="domain/Matrix.hbm.xml"/>
   <mapping resource="domain/Patient.hbm.xml"/>
+  <mapping resource="domain/Work.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

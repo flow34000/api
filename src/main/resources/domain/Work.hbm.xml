@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 f?vr. 2016 19:16:46 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="domain.Work" table="work">
+        <composite-id name="id" class="domain.WorkId">
+            <key-property name="id" type="string">
+                <column name="id" length="25" />
+            </key-property>
+            <key-property name="matrixId" type="short">
+                <column name="matrix_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="matrix" class="domain.Matrix" update="false" insert="false" fetch="select">
+            <column name="matrix_id" not-null="true" />
+        </many-to-one>
+        <property name="idType" type="string">
+            <column name="id_type" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

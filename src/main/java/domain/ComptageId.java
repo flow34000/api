@@ -1,6 +1,6 @@
 package domain;
 
-// Generated 2 févr. 2016 10:59:52 by Hibernate Tools 3.4.0.CR1
+// Generated 3 févr. 2016 19:16:46 by Hibernate Tools 3.4.0.CR1
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
