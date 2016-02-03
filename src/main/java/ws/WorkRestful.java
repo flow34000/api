@@ -12,7 +12,6 @@ import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import model.ComptageModel;
 import model.WorkModel;
 import domain.Comptage;
 import domain.Gene;
@@ -27,7 +26,7 @@ public class WorkRestful {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getComptages(@PathParam("work_id") Short work_id) throws IllegalArgumentException, Exception {
 		WorkModel wm = new WorkModel();
-		return Response.ok().entity(new GenericEntity<Set<JSONMatrix>>(wm.getComptages(work_id)){})
+		return Response.ok().entity(new GenericEntity<List<JSONMatrix>>(wm.getComptages(work_id)){})
 			.build();
 	}
 	
@@ -54,7 +53,7 @@ public class WorkRestful {
 	@Path("/select/col")
 	public Response getComptagesFromIdPatient(@QueryParam("id") List<String> ids) throws IllegalArgumentException, Exception {
 		WorkModel wm = new WorkModel();
-		return Response.ok().entity(new GenericEntity<Set<JSONMatrix>>(wm.getComptagesFromIdPatient(ids)){})
+		return Response.ok().entity(new GenericEntity<List<JSONMatrix>>(wm.getComptagesFromIdPatient(ids)){})
 			.build();
 	}
 	
@@ -63,7 +62,7 @@ public class WorkRestful {
 	@Path("/select/row")
 	public Response getComptagesFromIdGene(@QueryParam("id") List<String> ids) throws IllegalArgumentException, Exception {
 		WorkModel wm = new WorkModel();
-		return Response.ok().entity(new GenericEntity<Set<JSONMatrix>>(wm.getComptagesFromIdGene(ids)){})
+		return Response.ok().entity(new GenericEntity<List<JSONMatrix>>(wm.getComptagesFromIdGene(ids)){})
 			.build();
 	}
 }

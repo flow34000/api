@@ -9,7 +9,7 @@ import java.util.Set;
 public class JSONMatrix {
 
 	private String patient_id;
-	private Set<JSONComptage> genes = new HashSet<JSONComptage>();
+	private List<JSONComptage> genes = new ArrayList<JSONComptage>();
 	
 	public JSONMatrix(){
 		
@@ -23,11 +23,11 @@ public class JSONMatrix {
 		this.patient_id = patient_id;
 	}
 
-	public Set<JSONComptage> getComptages() {
+	public List<JSONComptage> getComptages() {
 		return genes;
 	}
 
-	public void setComptages(Set<JSONComptage> genes) {
+	public void setComptages(List<JSONComptage> genes) {
 		this.genes = genes;
 	}
 }
