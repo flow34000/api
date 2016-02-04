@@ -50,7 +50,7 @@ public class WorkRestful {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/select/col")
+	@Path("/selectedCol")
 	public Response getComptagesFromIdPatient(@QueryParam("id") List<String> ids) throws IllegalArgumentException, Exception {
 		WorkModel wm = new WorkModel();
 		return Response.ok().entity(new GenericEntity<List<JSONMatrix>>(wm.getComptagesFromIdPatient(ids)){})
@@ -59,7 +59,7 @@ public class WorkRestful {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/select/row")
+	@Path("/selectedRow")
 	public Response getComptagesFromIdGene(@QueryParam("id") List<String> ids) throws IllegalArgumentException, Exception {
 		WorkModel wm = new WorkModel();
 		return Response.ok().entity(new GenericEntity<List<JSONMatrix>>(wm.getComptagesFromIdGene(ids)){})
