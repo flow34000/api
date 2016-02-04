@@ -2,7 +2,7 @@
 <body>
 <h2>API Cortect ma gueule!</h2>
 
-<span>Liste des points d'accès</span>
+<span>Liste des points d'accès</span><br/><br/>
 <a href="https://cortect.herokuapp.com/api/work/1">Matrix_200.json</a><br/>
 <a href="https://cortect.herokuapp.com/api/work/1/genes">Get all genes</a><br/>
 <a href="https://cortect.herokuapp.com/api/work/1/patients">Get all patients</a><br/>
